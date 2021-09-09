@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tulostetaan käyttäjälle luvun kertotaulu</h1>
+    <input type="text" id="lukuYksi" placeholder="esim. 3">
+    <p id="tulosta">Tähän tulee vastaus</p>
+    <button id="btn">Laske</button>
+    <script>
+        //Otetaan kaikki elementit talteen mitä tarvitaan
+        const kenttäYksi = document.getElementById("lukuYksi")
+        const vastausAlue = document.getElementById("tulosta")
+        const nappi = document.getElementById("btn")
+
+        //Kuunnellaan mikä luku on annetta kun nappia painetaan
+        nappi.addEventListener("click", lueluku)
+
+        //Funktio joka lukee luvunja käynnistää kertotaulu- funktio
+        function lueluku() {
+            let arvo = kenttäYksi.value
+            let tulos = kertotaulu(arvo)
+            //Kirjoitetaan tulos verkkosivuun
+            vastausAlue.innerHTML = tulos
+        }
+
+        //Funktio joka rakentaa kertataulun. Palauttaa koko kretataulun merkkijonona
+        function kertotaulu(luku) {
+            let tulos = ""
+            for(let i = 0; i < 11; i++) {
+                tulos += i*luku+" "
+            }
+            return tulos
+        }
+</script>
+</body>
+</html>

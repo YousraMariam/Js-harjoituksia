@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Lasketaan kaksi lukua yhteen</h1>
+    <input type="text" id="lukuYksi" placeholder="esim. 3"> +
+    <input type="text" id="lukuKaksi" placeholder="esim. 5">
+    <p id="tulosta">Tähän tulee vastaus</p>
+    <button id="btn">Summa</button>
+    <script>
+        //Otetaan kaikki elementit talteen mitä tarvitaan
+        const kenttäYksi = document.getElementById("lukuYksi")
+        const kenttäKaksi = document.getElementById("lukuKaksi")
+        const vastausAlue = document.getElementById("tulosta")
+        const nappi = document.getElementById("btn")
+        //Luodaan tapahtumankuuntelija napille
+        nappi.addEventListener("click", summaLasku)
+        //Määritellään funktio summaLasku
+        function summaLasku(){
+            let summa = Number(kenttäYksi.value) + Number(kenttäKaksi.value)
+            vastausAlue.innerHTML = summa
+        }
+    </script>
+</body>
+</html>

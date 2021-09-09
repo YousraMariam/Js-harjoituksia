@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tässä on otsikko</h1>
+    <p id="teksti">Tässä on tekstiä</p>
+    <p id="toinenAlue">Mitä tässä lukee?</p>
+
+    <input type= "text" id= "lomake" value="terveisiä">
+    <button id="btn">Muuta tekstiä</button>
+
+    <script>
+        //Luodaan napille tapahtumankuuntelija
+        const nappi = document.getElementById("btn")
+        //Lisätään nappiin tapahtumankuuntelija
+        nappi.addEventListener("click", lisaaTekstia)
+
+        function lisaaTekstia() {
+            //Scripti joka kirjoittaa uuden tekstin
+            //Valitaan elementti mihin tehdään muutokset
+            const elem = document.getElementById("teksti")
+            //Tehdään siihen elementtiin muutos.Eli kirjoitetaan uusi teksti
+            elem.innerHTML = "Tämä on muutettu teksti"
+        }
+        //Scripti joka kirjoittaa uuden tekstin
+        //Valitaan elementti mihin tehdään muutokset
+        const elem = document.getElementById("teksti")
+        //Tehdään siihden elementtiin muutos. Eli kirjoitetaan uusi teksti.
+        elem.innerHTML = "Tämä on muutettu teksti"
+
+        // Scripti joka lukee elementin sisällön
+        //Valitaan elementti mihin tehdään muutokset 
+        const alue = document.getElementById("toinenAlue")
+        //Luetaan arvo/sisältö elementistä
+        let merkkis = alue.innerHTML
+        console.log(merkkis)
+
+        //Scripti joka lukee lomakkeesta(tekstikentästä) sen arvon
+        const lomake = document.getElementById("lomake")
+        //Luetaan sieltä arvo eli value
+        let arvo = lomake.value
+        console.log(arvo)
+    </script>
+    
+</body>
+</html>
+</html>
